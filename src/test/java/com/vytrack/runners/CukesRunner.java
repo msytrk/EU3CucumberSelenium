@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = "src/test/resources/features",
-        glue = "com/vytrack/step_definitions"
+        glue = "com/vytrack/step_definitions",
+         dryRun = false,  // it control only steps are here  or not
+         tags = "@Navigate"
 )
 public class CukesRunner {
 
