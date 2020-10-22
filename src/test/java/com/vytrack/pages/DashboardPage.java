@@ -7,7 +7,8 @@ import org.openqa.selenium.support.FindBys;
 public class DashboardPage extends BasePage {
 
 
-
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[1]")
+    public WebElement userCredential;
 
 
 }

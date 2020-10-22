@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
@@ -11,6 +12,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Map;
 
 public class LoginStepDefs {
     @Given("the user is on the login page")
@@ -85,4 +88,29 @@ public class LoginStepDefs {
 
     }
 
-}
+
+    @When("the user logs in using following credentials")
+    public void the_user_logs_in_using_following_credentials(Map<String,String> userInfo) {
+        System.out.println(userInfo);
+        //use map information to login and also verify firstname and lastname
+       //  userInfo.forEach((username, password) -> new LoginPage().login(username, password));
+
+        System.out.println(userInfo);
+        //use map information to login and also verify firstname and lastname
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(userInfo.get("username"),userInfo.get("password"));
+
+        DashboardPage dashboardPage = new DashboardPage();
+        dashboardPage.waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitFor(3);
+
+        String actualFullName = dashboardPage.getUserName();
+        String expectedFullName = userInfo.get("firstname")+" "+userInfo.get("lastname");
+        Assert.assertEquals(expectedFullName,actualFullName);
+
+
+    }}
+
+
+
+
