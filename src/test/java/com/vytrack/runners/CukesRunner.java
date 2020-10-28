@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,  // it control only steps are here  or not
-        tags = "@smoke"
+        tags = "@wip"
 )
 public class CukesRunner {
 
