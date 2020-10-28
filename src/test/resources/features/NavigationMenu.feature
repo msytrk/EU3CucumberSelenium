@@ -1,4 +1,4 @@
-@Navigate
+@navigate
 Feature: Navigation Menu
 
   Scenario: Navigating Fleet -- Vehicles
@@ -6,7 +6,7 @@ Feature: Navigation Menu
     And the user enters the sales manager information
     When the user navigates to Fleet, Vehicles
     Then the title should be Vehicles
-@db
+  @db
   Scenario: Navigating Marketing -- Campaigns
     Given the user is on the login page
     And the user enters the sales manager information
@@ -18,3 +18,5 @@ Feature: Navigation Menu
     And the user enters the sales manager information
     When the user navigates to Activities, Calendar Events
     Then title should be Calendars
+
+
