@@ -4,7 +4,7 @@ Feature: Contacts Page
     And the user enters the driver information
     When the user navigates to "Customers" "Contacts"
     Then default page number should be 1
-  @wip
+
 Scenario:Verify Create calendar Event
     Given the user is on the login page
     And the user enters the sales manager information
@@ -19,7 +19,7 @@ Scenario:Verify Create calendar Event
     | Activities |
     | System     |
 
-
+  @wip
   Scenario:Menu Options
     Given the user logged in as "salesmanager"
     Then the user should see following options
@@ -42,5 +42,19 @@ Scenario:Verify Create calendar Event
       | lastname  | Schneider   |
     Then the user should be able to login
 
+
+  Scenario Outline: login as a given user <user>
+    Given the user is on the login page
+    When the user logs in using following credentials
+      | username  | <user>      |
+      | password  | UserUser123 |
+      | firstname | <firstName> |
+      | lastname  | <lastName>  |
+    Then the user should be able to login
+
+    Examples:
+      | user           | firstName | lastName  |
+      | user10         | Brenden   | Schneider |
+      | storemanager85 | Stephan   | Haley     |
 
 
