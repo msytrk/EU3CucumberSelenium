@@ -10,7 +10,7 @@ import org.junit.Assert;
 public class NavigationMenuStepDefs {
     @When("the user navigates to Fleet, Vehicles")
     public void the_user_navigates_to_Fleet_Vehicles() {
-        //selenium code
+      //selenium code
         System.out.println("the user navigates to Fleet, Vehicles");
     }
 
@@ -44,7 +44,7 @@ public class NavigationMenuStepDefs {
 
     @When("the user navigates to {string} {string}")
     public void the_user_navigates_to(String tab, String module) {
-        new DashboardPage().navigateToModule(tab,module);
+      new DashboardPage().navigateToModule(tab,module);
     }
 
     @Then("default page number should be {int}")
